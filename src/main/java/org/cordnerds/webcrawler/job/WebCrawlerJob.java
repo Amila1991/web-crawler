@@ -65,7 +65,6 @@ public class WebCrawlerJob {
             return Optional.empty();
         }
 
-
         document.select("a")
                 .parallelStream()
                 .map(element -> element.attr("href"))
