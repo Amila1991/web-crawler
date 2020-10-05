@@ -1,12 +1,12 @@
 # web-crawler
 Simple we crawler example using spring boot
 
-####Build Project
+#### Build Project
 Using below command you can build project
 
 `mvn clean install`
 
-#####Run
+##### Run
 Using following command you can run project
 
 `java -jar web-crawler-0.0.1-SNAPSHOT.jar --web.crawler.start.url=<starting page URL> --web.crawler.search.word=<String>`
