@@ -9,6 +9,8 @@ import java.util.concurrent.*;
 
 /**
  * @author Amila Karunathilaka
+ *
+ * This is executor service which is executed serach tasks.
  */
 @Component
 public class WebCrawlerExecutor {
@@ -21,7 +23,13 @@ public class WebCrawlerExecutor {
         this.executorCompletionService = new ExecutorCompletionService<>(executorService);
     }
 
-    public void submitTask(WebCrawlerJob job, String searchWord, String url) {
+    /**
+     *  add new task to queue in executor service
+     * @param job
+     * @param searchWord
+     * @param url
+     */
+    public void addTask(WebCrawlerJob job, String searchWord, String url) {
          executorCompletionService.submit(() -> {
              job.search(searchWord, url);
              return true;

@@ -36,7 +36,7 @@ public class WebCrawlerStarter {
     }
 
     public void start() throws InterruptedException {
-        executor.submitTask(initialJob, input.getSearchWord(), input.getStartUrl());
+        executor.addTask(initialJob, input.getSearchWord(), input.getStartUrl());
         executor.resultPrintAndShutdown(resultWriterList, input.getSearchWord(), input.getStartUrl());
     }
 

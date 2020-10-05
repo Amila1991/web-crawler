@@ -74,7 +74,7 @@ public class WebCrawlerJob {
                 .distinct().filter(nextUrl -> UrlValidator.getInstance().isValid(nextUrl))
                 .forEach(nextUrl -> {
                     WebCrawlerJob crawlerJob = context.getBean(WebCrawlerJob.class);
-                    this.webCrawlerExecutor.submitTask(crawlerJob, searchWord, nextUrl);
+                    this.webCrawlerExecutor.addTask(crawlerJob, searchWord, nextUrl);
                 });
 
         return Optional.ofNullable(document);
